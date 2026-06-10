@@ -142,5 +142,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 GROQ_API_KEY = os.environ.get('GROQ_API_KEY', '')
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY', '')
 
-if not GROQ_API_KEY:
-    raise ImproperlyConfigured('GROQ_API_KEY must be set in the environment or .env file')
+# In production we require GROQ_API_KEY; allow missing key in DEBUG for local dev
+if not GROQ_API_KEY and not DEBUG:
+    raise ImproperlyConfigured('GROQ_API_KEY must be set in the environment or .env file when DEBUG is False')
