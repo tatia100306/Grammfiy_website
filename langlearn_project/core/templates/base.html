@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammify - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i> Grammify
+            </div>
+            <nav class="nav-menu">
+                <a href="{% url 'grammar' %}" class="nav-item {% if request.resolver_match.url_name == 'grammar' %}active{% endif %}">
+                    <i class="fas fa-font"></i> <span>Grammar Checker</span>
+                </a>
+                <a href="{% url 'chat' %}" class="nav-item {% if request.resolver_match.url_name == 'chat' %}active{% endif %}">
+                    <i class="fas fa-comment-dots"></i> <span>AI Conversation</span>
+                </a>
+                <a href="{% url 'quiz' %}" class="nav-item {% if request.resolver_match.url_name == 'quiz' %}active{% endif %}">
+                    <i class="fas fa-book-open"></i> <span>Vocabulary Quiz</span>
+                </a>
+                <a href="{% url 'progress' %}" class="nav-item {% if request.resolver_match.url_name == 'progress' %}active{% endif %}">
+                    <i class="fas fa-chart-line"></i> <span>Progress</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

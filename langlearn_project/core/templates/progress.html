@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="header-text">
+    <h1>Progress Belajar</h1>
+    <p>Pantau perkembangan dan hasil belajar Anda.</p>
+</div>
+
+<div class="stats-grid">
+    <div class="card stat-card">
+        <h3>Skor Terakhir</h3>
+        <div class="big-score">80<span>/100</span></div>
+        <p>Quiz: Business & Career</p>
+    </div>
+
+    <div class="card chart-card">
+        <h3>Skor Per Topik</h3>
+        <div class="topic-bar">
+            <span>Business</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+            <span>80%</span>
+        </div>
+        <div class="topic-bar">
+            <span>Travel</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div>
+            <span>92%</span>
+        </div>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 20px;">
+    <h3>Pencapaian (Badge)</h3>
+    <div class="badge-row">
+        <i class="fas fa-award"></i> First Quiz
+        <i class="fas fa-fire"></i> 7 Day Streak
+        <i class="fas fa-star"></i> Top Scorer
+    </div>
+</div>
+{% endblock %}

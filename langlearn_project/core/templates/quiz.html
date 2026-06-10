@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Vocabulary Quiz{% endblock %}
+{% block content %}
+<div class="header-text">
+    <h1>Vocabulary Quiz</h1>
+    <p>Uji sejauh mana penguasaan kosakata bahasa Inggris Anda.</p>
+</div>
+
+<div class="card" style="max-width: 800px; margin: 0 auto;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <span style="background: #e7f1ff; color: #007bff; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600;">Business & Career</span>
+        <span style="color: var(--text-muted);">Question 4 of 10</span>
+    </div>
+    
+    <h2 style="margin-bottom: 2rem;">What does the word <strong>"Resilient"</strong> mean?</h2>
+
+    <div style="display: grid; gap: 1rem;">
+        <button class="btn-option" style="text-align: left; padding: 1.2rem; border: 1.5px solid #eee; background: white; border-radius: 12px; cursor: pointer; transition: 0.3s;">A. Easily broken or damaged</button>
+        <button class="btn-option" style="text-align: left; padding: 1.2rem; border: 1.5px solid #eee; background: white; border-radius: 12px; cursor: pointer;">B. Very attractive and charming</button>
+        <button class="btn-option" style="text-align: left; padding: 1.2rem; border: 2px solid #007bff; background: #f0f7ff; color: #007bff; border-radius: 12px; font-weight: 600;">C. Able to recover quickly from difficulties</button>
+        <button class="btn-option" style="text-align: left; padding: 1.2rem; border: 1.5px solid #eee; background: white; border-radius: 12px; cursor: pointer;">D. Moving at a very fast pace</button>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
+        <button class="btn-primary" style="background: #eee; color: #333;">Previous</button>
+        <button class="btn-primary">Next Question</button>
+    </div>
+</div>
+{% endblock %}

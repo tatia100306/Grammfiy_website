@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}AI Chat{% endblock %}
+{% block content %}
+<div class="header-text">
+    <h1>AI Conversation</h1>
+    <p>Tingkatkan kelancaran berbicara Anda dengan berdialog bersama tutor AI.</p>
+</div>
+
+<div class="card" style="display: flex; flex-direction: column; height: 70vh;">
+    <div id="chat-box" style="flex: 1; overflow-y: auto; padding-right: 10px; margin-bottom: 1.5rem;">
+        <div class="message-ai" style="background: #f1f1f1; padding: 1rem; border-radius: 12px 12px 12px 0; margin-bottom: 1rem; max-width: 80%;">
+            <p style="margin: 0;">Hello! I'm your English tutor. What topic would you like to discuss today? 😊</p>
+        </div>
+        </div>
+    
+    <div style="display: flex; gap: 1rem;">
+        <input type="text" id="user-input" placeholder="Type your message in English...">
+        <button class="btn-primary" style="padding: 1rem 1.5rem;"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+{% endblock %}
