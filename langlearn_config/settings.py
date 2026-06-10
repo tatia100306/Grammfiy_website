@@ -20,6 +20,18 @@ load_dotenv(find_dotenv())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load environment file from project root or inner package if present.
+# This helps local `manage.py runserver` find `.env` even when there is a nested env file.
+DOTENV_PATHS = [
+    BASE_DIR / '.env',
+    BASE_DIR / 'langlearn_project' / '.env',
+]
+for dotenv_path in DOTENV_PATHS:
+    if dotenv_path.exists():
+        load_dotenv(dotenv_path)
+        break
+else:
+    load_dotenv(find_dotenv())
 
 # Quick-start deployment settings
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
@@ -30,7 +42,7 @@ SECRET_KEY = os.environ.get(
     'django-insecure-67djoy_sq#hl)z7p$n!%w$2s_or&6xilaf(3zx0)qbps*9j$@p'
 )
 
-DEBUG = os.environ.get('DJANGO_DEBUG', 'False').lower() in ('true', '1', 'yes')
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
 
@@ -134,7 +146,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'core' / 'static',
 ]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

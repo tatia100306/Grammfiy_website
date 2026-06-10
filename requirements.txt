@@ -68,4 +68,4 @@ urllib3==2.6.3
 wcwidth==0.2.13
 whitenoise==6.5.0
 dj-database-url==1.0.0
-psycopg2-binary==2.9.9
+psycopg2-binary==2.9.9 ; sys_platform != "win32"
